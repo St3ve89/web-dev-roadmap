@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/web-dev-roadmap/static/js/runtime~main.ae07be0b.js"
   },
   {
-    "revision": "67dee0a2be8943ec0054",
-    "url": "/web-dev-roadmap/static/js/main.67dee0a2.chunk.js"
+    "revision": "f67bdfe1b4d010e306a1",
+    "url": "/web-dev-roadmap/static/js/main.f67bdfe1.chunk.js"
   },
   {
     "revision": "add44d7f253a99da1144",
     "url": "/web-dev-roadmap/static/js/1.add44d7f.chunk.js"
   },
   {
-    "revision": "67dee0a2be8943ec0054",
+    "revision": "f67bdfe1b4d010e306a1",
     "url": "/web-dev-roadmap/static/css/main.b28750c0.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/web-dev-roadmap/static/css/1.7a516413.chunk.css"
   },
   {
-    "revision": "73f2b4345c75fe1a5719e060c9d70af9",
+    "revision": "c854ff3030886af4a9ceb17f97b75894",
     "url": "/web-dev-roadmap/index.html"
   }
 ];
