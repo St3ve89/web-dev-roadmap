@@ -1,12 +1,54 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import App from '../containers/App'
+import MainPage from './MainPage'
 
-it('expect to render App component', () => {
-  const mockStore = {
+
+let wrapper
+beforeEach(() => {
+  const mockProps = {
+    onRequestRobots: jest.fn(),
     robots: [],
-    searchField: ''
+    searchField: '',
+    isPending: false
   }
-    expect(shallow(<App store={mockstore}/>)).toMatchSnapshot()
+  wrapper = shallow(<MainPage { ...mockProps }/>)
 })
 
+it('renders MainPage without crashing', () => {
+  expect(wrapper).toMatchSnapshot()
+})
+
+it('Filters robots correctly', () => {
+  const mockProps2 = {
+    onRequestRobots: jest.fn(),
+    robots: [{
+      id: 3,
+      name: 'Jhon',
+      email: 'jhon@gmail.com'
+    }],
+    searchField: 'jhon',
+    isPending: false
+  }
+  const wrapper2 = shallow(<MainPage { ...mockProps2 }/>)
+  expect(wrapper2.instance().filterRobots()).toEqual([{
+    id: 3,
+    name: 'Jhon',
+    email: 'jhon@gmail.com'
+  }]);
+})
+
+it('Filters robots correctly 2', () => {
+  const mockProps3 = {
+    onRequestRobots: jest.fn(),
+    robots: [{
+      id: 3,
+      name: 'Jhon',
+      email: 'jhon@gmail.com'
+    }],
+    searchField: 'a',
+    isPending: false
+  }
+  const filteredRobots = []
+  const wrapper3 = shallow(<MainPage { ...mockProps3 }/>)
+  expect(wrapper3.instance().filterRobots()).toEqual(filteredRobots);
+})
