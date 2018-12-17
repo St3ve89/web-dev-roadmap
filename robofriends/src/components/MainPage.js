@@ -20,20 +20,21 @@ class MainPage extends Component {
     })
   }
   render() {
-    const { onSearchChange, robots, isPending } = this.props
+    const { onSearchChange, isPending } = this.props
+
      return (
-        <div className="tc">
-          <Header />
-          <SearchBox searchChange={onSearchChange}/>
-          <Scroll>
-            { isPending ? <h1>Loading</h1> : 
-            <ErrorBoundry>
-              <CardList robots={this.filterRobots}/>
-            </ErrorBoundry>
-            }
-          </Scroll>
-        </div>
-      )
+      <div className="tc">
+        <Header />
+        <SearchBox searchChange={onSearchChange}/>
+        <Scroll>
+          { isPending ? <h1>Loading</h1> : 
+          <ErrorBoundry>
+            <CardList robots={this.filterRobots}/>
+          </ErrorBoundry>
+          }
+        </Scroll>
+      </div>
+    )
   }
 }
 
